@@ -9,8 +9,8 @@ function App() {
   useEffect(() => {
     async function fetchRows() {
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/rows/');
-        const data = await response.json();
+      const response = await fetch('https://your-backend-name.onrender.com/api/rows/');        
+      const data = await response.json();
         setRows(data || []);
       } catch (err) {
         console.error(err);
@@ -24,8 +24,8 @@ function App() {
 
   const handleApprove = async (id) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/rows/${id}/approve/`, {
-        method: 'POST',
+    const response = await fetch(`https://your-backend-name.onrender.com/api/rows/${id}/approve/`, {        
+      method: 'POST',
       });
 
       if (response.ok) {

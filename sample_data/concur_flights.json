@@ -1,0 +1,9 @@
+[
+  {
+    "traveler_id": "T-102",
+    "departure_iata": "SFO",
+    "arrival_iata": "LHR",
+    "cabin_class": "Economy",
+    "date": "2026-05-20"
+  }
+]

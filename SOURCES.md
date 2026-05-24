@@ -1,0 +1,19 @@
+# SOURCES.md
+
+## 1. SAP (Fuel and Procurement)
+* **Real-world format researched:** (e.g., CSV dump from SAP GUI / IDoc flat file)
+* **What I learned:** SAP exports often use local user settings resulting in German headers and non-standard date formats (`DD.MM.YYYY`).
+* **Sample data design:** I included `Menge` and `ME` columns with mixed units (Liters and Gallons) and unmapped plant codes. 
+* **What would break in production:** A new plant code being added without a lookup table update, or a change in the user's locale settings changing the date format.
+
+## 2. Utility Data (Electricity)
+* **Real-world format researched:** (e.g., Green Button CSV export from a utility portal)
+* **What I learned:** ...
+* **Sample data design:** ...
+* **What would break in production:** ...
+
+## 3. Corporate Travel (Flights)
+* **Real-world format researched:** (e.g., Navan / Concur API JSON response)
+* **What I learned:** ...
+* **Sample data design:** ...
+* **What would break in production:** ...

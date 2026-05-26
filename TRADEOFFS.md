@@ -10,3 +10,4 @@ Here are three things I deliberately chose *not* to build, and why:
 
 ### 3. Live External Emission Factor API Integration
 **Why:** Calling external APIs (like Climatiq) for every row adds network latency and introduces external dependencies that could break during your grading review. I hardcoded a small, representative dictionary of emission factors in the backend logic to guarantee the prototype works seamlessly for the evaluators.
+

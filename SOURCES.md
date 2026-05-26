@@ -1,19 +1,14 @@
-# SOURCES.md
-
-## 1. SAP (Fuel and Procurement)
-* **Real-world format researched:** (e.g., CSV dump from SAP GUI / IDoc flat file)
-* **What I learned:** SAP exports often use local user settings resulting in German headers and non-standard date formats (`DD.MM.YYYY`).
-* **Sample data design:** I included `Menge` and `ME` columns with mixed units (Liters and Gallons) and unmapped plant codes. 
-* **What would break in production:** A new plant code being added without a lookup table update, or a change in the user's locale settings changing the date format.
+## 1. SAP (Fuel & Procurement)
+* [cite_start]**Researched Format:** SAP IDoc (Intermediate Document) and Flat File exports[cite: 25].
+* [cite_start]**Learning:** SAP exports often use German headers (e.g., `Menge` for Quantity) and non-standard date formats (YYYYMMDD)[cite: 26].
+* [cite_start]**Sample Data Strategy:** My sample data uses a "Flat File" structure with inconsistent units (Liters vs. Gallons) to test the normalization engine's ability to handle "unfriendly" enterprise data[cite: 25, 27].
 
 ## 2. Utility Data (Electricity)
-* **Real-world format researched:** (e.g., Green Button CSV export from a utility portal)
-* **What I learned:** ...
-* **Sample data design:** ...
-* **What would break in production:** ...
+* [cite_start]**Researched Format:** Green Button Standard (XML/CSV) and Portal Exports[cite: 29].
+* [cite_start]**Learning:** Billing periods rarely align with calendar months, requiring pro-rata calculations[cite: 30].
+* **Sample Data Strategy:** Focused on CSV portal exports as they are the most common way facilities teams pull data manually.
 
-## 3. Corporate Travel (Flights)
-* **Real-world format researched:** (e.g., Navan / Concur API JSON response)
-* **What I learned:** ...
-* **Sample data design:** ...
-* **What would break in production:** ...
+## 3. Corporate Travel (Flights/Hotels)
+* [cite_start]**Researched Format:** SAP Concur / Navan API structures[cite: 31, 32].
+* [cite_start]**Learning:** Flights often omit distance (km) and only provide IATA airport codes (e.g., JFK to LHR), necessitating a lookup table for distance[cite: 33].
+* [cite_start]**Sample Data Strategy:** Provided JSON payloads mimicking API responses to demonstrate handling of Ground vs. Air transport categories[cite: 32, 34].

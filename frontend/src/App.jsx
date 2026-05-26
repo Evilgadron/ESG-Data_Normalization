@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     async function fetchRows() {
       try {
-      const response = await fetch('https://your-backend-name.onrender.com/api/rows/');        
+      const response = await fetch('https://esg-data-normalization.vercel.app/api/rows/');      
       const data = await response.json();
         setRows(data || []);
       } catch (err) {
@@ -24,7 +24,7 @@ function App() {
 
   const handleApprove = async (id) => {
     try {
-    const response = await fetch(`https://your-backend-name.onrender.com/api/rows/${id}/approve/`, {        
+    const response = await fetch(`https://esg-data-normalization.vercel.app/api/rows/${id}/approve/`, {        
       method: 'POST',
       });
 
@@ -54,6 +54,7 @@ function App() {
       const matchesSearch =
         query === '' ||
         JSON.stringify(row.raw_data).toLowerCase().includes(query.toLowerCase());
+        String(row.id).toLowerCase().includes(query.toLowerCase());
 
       const matchesStatus =
         statusFilter === 'ALL' || row.status === statusFilter;
@@ -171,7 +172,9 @@ function App() {
                       
                       <td className="p-3 border-r border-gray-200 align-top">
                         <div className="font-semibold text-gray-900">Scope {row.scope}</div>
-                        <div className="text-[10px] text-gray-500 font-mono mt-1">{row.id?.substring(0,8)}</div>
+                        <div className="text-[10px] text-gray-500 font-mono mt-1">
+                          {row.id ? String(row.id).substring(0, 8) : 'N/A'}
+                        </div>
                       </td>
                       
                       <td className="p-3 border-r border-gray-200 align-top">

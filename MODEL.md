@@ -1,4 +1,4 @@
-# MODEL.md - Data Architecture & Audit Strategy
+# Data Architecture & Audit Strategy
 
 ## Overview
 The architecture relies on a "Preservation-First" philosophy. To satisfy auditor requirements for an immutable ledger, we never discard the original "messy" data. Instead, we store it alongside the normalized output.
